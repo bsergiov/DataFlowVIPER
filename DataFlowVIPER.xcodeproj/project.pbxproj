@@ -10,9 +10,13 @@
 		CCD16B062847737D0061E045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B052847737D0061E045 /* AppDelegate.swift */; };
 		CCD16B082847737D0061E045 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B072847737D0061E045 /* SceneDelegate.swift */; };
 		CCD16B0A2847737D0061E045 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B092847737D0061E045 /* ViewController.swift */; };
-		CCD16B0D2847737D0061E045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD16B0B2847737D0061E045 /* Main.storyboard */; };
 		CCD16B0F284773800061E045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD16B0E284773800061E045 /* Assets.xcassets */; };
 		CCD16B12284773800061E045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD16B10284773800061E045 /* LaunchScreen.storyboard */; };
+		CCD16B1B284774460061E045 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B1A284774460061E045 /* MainView.swift */; };
+		CCD16B1D284774640061E045 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B1C284774640061E045 /* MainInteractor.swift */; };
+		CCD16B1F284774960061E045 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B1E284774960061E045 /* MainPresenter.swift */; };
+		CCD16B21284774C30061E045 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B20284774C30061E045 /* MainEntity.swift */; };
+		CCD16B23284774DC0061E045 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD16B22284774DC0061E045 /* MainRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +24,14 @@
 		CCD16B052847737D0061E045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCD16B072847737D0061E045 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CCD16B092847737D0061E045 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CCD16B0C2847737D0061E045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCD16B0E284773800061E045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCD16B11284773800061E045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCD16B13284773800061E045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD16B1A284774460061E045 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CCD16B1C284774640061E045 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		CCD16B1E284774960061E045 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		CCD16B20284774C30061E045 /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
+		CCD16B22284774DC0061E045 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		CCD16B042847737D0061E045 /* DataFlowVIPER */ = {
 			isa = PBXGroup;
 			children = (
+				CCD16B19284773A30061E045 /* MainModule */,
 				CCD16B052847737D0061E045 /* AppDelegate.swift */,
 				CCD16B072847737D0061E045 /* SceneDelegate.swift */,
 				CCD16B092847737D0061E045 /* ViewController.swift */,
-				CCD16B0B2847737D0061E045 /* Main.storyboard */,
 				CCD16B0E284773800061E045 /* Assets.xcassets */,
 				CCD16B10284773800061E045 /* LaunchScreen.storyboard */,
 				CCD16B13284773800061E045 /* Info.plist */,
 			);
 			path = DataFlowVIPER;
+			sourceTree = "<group>";
+		};
+		CCD16B19284773A30061E045 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				CCD16B1A284774460061E045 /* MainView.swift */,
+				CCD16B1C284774640061E045 /* MainInteractor.swift */,
+				CCD16B1E284774960061E045 /* MainPresenter.swift */,
+				CCD16B20284774C30061E045 /* MainEntity.swift */,
+				CCD16B22284774DC0061E045 /* MainRouter.swift */,
+			);
+			path = MainModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +147,6 @@
 			files = (
 				CCD16B12284773800061E045 /* LaunchScreen.storyboard in Resources */,
 				CCD16B0F284773800061E045 /* Assets.xcassets in Resources */,
-				CCD16B0D2847737D0061E045 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +158,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCD16B0A2847737D0061E045 /* ViewController.swift in Sources */,
+				CCD16B23284774DC0061E045 /* MainRouter.swift in Sources */,
+				CCD16B21284774C30061E045 /* MainEntity.swift in Sources */,
+				CCD16B1F284774960061E045 /* MainPresenter.swift in Sources */,
+				CCD16B1B284774460061E045 /* MainView.swift in Sources */,
 				CCD16B062847737D0061E045 /* AppDelegate.swift in Sources */,
+				CCD16B1D284774640061E045 /* MainInteractor.swift in Sources */,
 				CCD16B082847737D0061E045 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +171,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CCD16B0B2847737D0061E045 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CCD16B0C2847737D0061E045 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CCD16B10284773800061E045 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +307,6 @@
 				INFOPLIST_FILE = DataFlowVIPER/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +333,6 @@
 				INFOPLIST_FILE = DataFlowVIPER/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
