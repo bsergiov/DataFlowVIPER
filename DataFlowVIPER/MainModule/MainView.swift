@@ -5,25 +5,23 @@
 //  Created by BSergio on 01.06.2022.
 //
 
-import Foundation
 import UIKit
 
 // ViewController
-// protocol
-// reference presenter
+// Protocol
+// Ref to presenter
 
 protocol MainViewProtocol: AnyObject {
-    var presentet: MainPresenterProtocol? { get set }
+    var presenter: MainPresenterProtocol? { get set }
     
-    func update(with data: [MainModel])
+    func update()
     func update(with error: String)
 }
 
 class MainViewController: UIViewController, MainViewProtocol {
     
     // MARK: - Public Properties
-    unowned var presentet: MainPresenterProtocol?
-    var models: [MainModel] = []
+    var presenter: MainPresenterProtocol?
     
     // MARK: - UI Elements
     lazy private var tableView: UITableView = {
@@ -60,10 +58,9 @@ class MainViewController: UIViewController, MainViewProtocol {
         errorLabel.center = view.center
     }
     
-    func update(with data: [MainModel]) {
-        print("from vc dat \(data)")
+    // MARK: - Protocols View
+    func update() {
         DispatchQueue.main.async {
-            self.models = data
             self.tableView.reloadData()
             self.tableView.isHidden = false
         }
@@ -71,7 +68,6 @@ class MainViewController: UIViewController, MainViewProtocol {
     
     func update(with error: String) {
         DispatchQueue.main.async {
-            self.models = []
             self.tableView.isHidden = true
             self.errorLabel.text = error
             self.errorLabel.isHidden = false
@@ -82,13 +78,13 @@ class MainViewController: UIViewController, MainViewProtocol {
 // MARK: - Protocols TableView
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        models.count
+        presenter?.models.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = models[indexPath.row].namess
+        cell.textLabel?.text = presenter?.models[indexPath.row].name
         
         return cell
     }

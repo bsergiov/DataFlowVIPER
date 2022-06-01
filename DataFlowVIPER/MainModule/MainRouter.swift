@@ -22,7 +22,6 @@ class MainRouter: MainRouterProtocol {
     
     var entry: EntryPoint?
     
-    
     static func start() -> MainRouterProtocol {
         let router = MainRouter()
         // Assign View Interactor Presenter
@@ -31,7 +30,7 @@ class MainRouter: MainRouterProtocol {
         let interactor: MainInteractorProtocol = MainInteractor()
         
         interactor.presenter = presenter
-        view.presentet = presenter
+        view.presenter = presenter
         
         presenter.router = router
         presenter.view = view

@@ -40,7 +40,7 @@ class MainInteractor: MainInteractorProtocol {
                 print("faile fetch data \(error)")
                 self.presenter?.interactorDidFetch(with: .failure(error))
             }
-
+            
         }
         task.resume()
     }

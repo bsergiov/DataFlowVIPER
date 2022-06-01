@@ -16,6 +16,7 @@ enum FetchError: Error {
 }
 
 protocol MainPresenterProtocol: AnyObject {
+    var models: [MainModel] { get set }
     var router: MainRouterProtocol? { get  set }
     var interactor: MainInteractorProtocol? { get set }
     var view: MainViewProtocol? { get set }
@@ -24,6 +25,8 @@ protocol MainPresenterProtocol: AnyObject {
 }
 
 class MainPresenter: MainPresenterProtocol {
+    
+    var models: [MainModel] = []
     
     unowned var router: MainRouterProtocol?
     
@@ -35,14 +38,13 @@ class MainPresenter: MainPresenterProtocol {
     
     unowned var view: MainViewProtocol?
     
-    
-    
     func interactorDidFetch(with result: Result<[MainModel], Error>) {
         print("from interactorDidFetch")
         switch result {
             
         case .success(let entities):
-            view?.update(with: entities)
+            models = entities
+            view?.update()
         case .failure(let error):
             view?.update(with: "Fetch failed: \(error)")
         }
